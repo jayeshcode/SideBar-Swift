@@ -22,7 +22,7 @@ private var bottomTabBar: BottomTabBar!
         
         prepareTabBar()
         
-        let tabBar: TabBar = TabBar(frame: CGRectMake(0, 600, view.bounds.width, 44))
+        let tabBar: TabBar = TabBar(frame: CGRectMake(0, 400, view.bounds.width, 44))
         tabBar.backgroundColor = MaterialColor.blue.base
         
         view.addSubview(tabBar)
@@ -54,16 +54,7 @@ private var bottomTabBar: BottomTabBar!
         
     }
 
-   //opens camera on your device
-    @IBAction func openCameraButton(sender: AnyObject) {
-    
-        
-    
-    
-    
-    }
-    
-    //opens library button
+
        
     
     // delegate method
@@ -170,7 +161,15 @@ private var bottomTabBar: BottomTabBar!
         
         
     }
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
     
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake {print("shake")
+           
+        }
+    }
     
 }
 
